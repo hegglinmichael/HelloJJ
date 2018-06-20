@@ -6,7 +6,7 @@ def main():
     es = Elasticsearch()
 
     for i in es.indices.get("*"):
-        res = es.get(index=i, body={"query": {"match_all": {}}})
+        res = es.search(index=i, body={"query": {"match_all": {}}})
         for hit in res['hits']['hits']:
             name = hit["_source"]['name']
 
