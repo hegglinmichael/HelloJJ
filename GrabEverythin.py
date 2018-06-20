@@ -21,8 +21,8 @@ def main():
     print("\n")
 
     # stuff below could be used in a look to gather all data
-    print("new stuff -----------------")
-
+    print("info held in index -----------------")
+    print("\n")
     res = es.search(index="customer", body={"query": {"match_all": {}}})
     for hit in res['hits']['hits']:
         print(hit)
