@@ -2,7 +2,6 @@ from elasticsearch import Elasticsearch
 
 
 def main():
-
     es = Elasticsearch()
 
     # loops through a list of indices
@@ -14,7 +13,7 @@ def main():
         print("\n")
 
     print("testing specific index")
-    res = es.indices.get(index="customer")
+    res = es.get(index="customer", doc_type="_doc", id=1)
     print("this is res-------")
     print(res)
     print("\n")
