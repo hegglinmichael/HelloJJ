@@ -8,7 +8,8 @@ def main():
     for i in es.indices.get("*"):
         res = es.search(index=i, body={"query": {"match_all": {}}})
         for hit in res['hits']['hits']:
-            name = hit["_source"]['name']
+            print(hit)
+
 
 
 if __name__ == "__main__":
